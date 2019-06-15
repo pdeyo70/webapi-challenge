@@ -21,5 +21,30 @@ server.get('/', async (req, res) => {
     }
 })
 
+server.get('/:id', async (req, res) => {
+    console.log(req.params.id)
+    try{
+        const action = await Actions.get(req.params.id)
+        if (action){
+            res.status(200).json(action)
+        }
+        else {
+            res.status(404).json({ message: "Unable to find action with this ID."})
+        }
+    }
+    catch{
+        res.status(500).json({ error: "Error retrieving action."})
+    }
+})
+
+server.post('/:id', async (req, res) => {
+    try{
+
+    }
+    catch{
+
+    }
+})
+
 
 module.exports = server;
