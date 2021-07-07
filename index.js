@@ -12,3 +12,9 @@ I need this code, just don't know where, perhaps should make some middleware, do
 
 Go code!
 */
+
+const server = require('./server.js');
+
+server.listen(4666, () => {
+    console.log('\n*** Server Running on http://localhost:4666 ***\n');
+})
